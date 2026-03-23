@@ -10,7 +10,7 @@ import type { AwarenessResult, AgentActionType } from './types';
 import type { Item } from '../../../types';
 
 const DIRECTIONS = ['North', 'South', 'East', 'West'] as const;
-const DANGEROUS_HAZARDS = ['Toxic Air', 'Radioactive Decay', 'Void Instability', 'Extreme Cold', 'Scorching Heat'];
+const DANGEROUS_HAZARDS = ['Spectral Interference', 'Static Discharge', 'Toxic Air', 'Radioactive Decay', 'Void Instability', 'Extreme Cold', 'Scorching Heat'];
 
 /**
  * Compute awareness of the current game environment.

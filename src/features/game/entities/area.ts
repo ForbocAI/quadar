@@ -120,7 +120,7 @@ export const generateArea = (id?: string, biomeOverride?: Biome, context?: AreaG
         description: BIOME_DESCRIPTIONS[biome] || "You stand in a strange, uncharted area.",
         biome,
         regionalType: BIOME_TO_REGIONAL[biome] || "Area",
-        hazards: Math.random() * 100 < hazardThreshold ? ["Anomalous Flux"] : [],
+        hazards: Math.random() * 100 < hazardThreshold ? ["Spectral Interference"] : [],
         exits: generateExits(),
         npcs: generateNPCs(dangerFactor),
         vendors,

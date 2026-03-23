@@ -232,7 +232,7 @@ export function nodeExploration(
                         const exploredArea = state.exploredAreas?.[exitAreaId];
                         if (!exploredArea) return false;
                         const hasDangerousHazards = (exploredArea.hazards || []).some((h: string) =>
-                            ['Toxic Air', 'Radioactive Decay', 'Void Instability', 'Extreme Cold', 'Scorching Heat'].includes(h)
+                            ['Spectral Interference', 'Static Discharge', 'Toxic Air', 'Radioactive Decay', 'Void Instability', 'Extreme Cold', 'Scorching Heat'].includes(h)
                         );
                         return !hasDangerousHazards && (exploredArea.npcs || []).length === 0;
                     });

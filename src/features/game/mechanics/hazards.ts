@@ -33,7 +33,15 @@ export function calculateHazardEffects(hazards: string[]): { damage: number; str
         messages.push("Oppressive heat saps your strength.");
     }
 
-    // New "Threat Imminent" hazard logic
+    if (hazards.includes("Spectral Interference")) {
+        stress += 4;
+        messages.push("Ghostly signals scratch at the edges of your awareness.");
+    }
+    if (hazards.includes("Static Discharge")) {
+        damage += 2;
+        stress += 4;
+        messages.push("Arcs of residual energy crackle across exposed surfaces.");
+    }
     if (hazards.includes("Threat Imminent")) {
         stress += 10;
         messages.push("A profound sense of dread washes over you.");

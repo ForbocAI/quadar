@@ -84,7 +84,7 @@ export function addInitReducers(builder: ActionReducerMapBuilder<GameState>): vo
                     break;
                 case "hazard_spawn":
                     if (state.currentArea) {
-                        state.currentArea.hazards.push("Anomalous Surge");
+                        state.currentArea.hazards.push("Static Discharge");
                     }
                     break;
                 case "inquiry_lockout":
@@ -149,7 +149,7 @@ export function addInitReducers(builder: ActionReducerMapBuilder<GameState>): vo
                     break;
                 case "hazard_spawn":
                     if (state.currentArea) {
-                        state.currentArea.hazards.push("Anomalous Surge");
+                        state.currentArea.hazards.push("Static Discharge");
                     }
                     break;
                 case "inquiry_lockout":
