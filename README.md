@@ -46,6 +46,25 @@ npm install
 npm run dev
 ```
 
+To preview the static Cloudflare export locally:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Cloudflare Deploy
+
+Pushes to GitHub can deploy this repo to Cloudflare Pages through [deploy-cloudflare-pages.yml](/Users/seandinwiddie/GitHub/Forboc.AI/quadar/.github/workflows/deploy-cloudflare-pages.yml).
+
+Set these repository settings before relying on the workflow:
+
+- GitHub secret `CLOUDFLARE_API_TOKEN`: API token with Cloudflare Pages edit access for the target account.
+- GitHub variable `CLOUDFLARE_ACCOUNT_ID`: Cloudflare account ID that owns the Pages project.
+- GitHub variable `CLOUDFLARE_PAGES_PROJECT_NAME`: existing Cloudflare Pages project name for Quadar.
+
+The workflow installs dependencies, runs `npm run build` to export the app into `out/`, and uploads that static directory to Cloudflare Pages with `wrangler pages deploy`.
+
 ### 🌑 Aesthetic Mandates
 Strict adherence to the [Style Guide](./style-guide.md) is expected.
 - **Paranoid Reality**: Guided by `Philip K. Dick`.

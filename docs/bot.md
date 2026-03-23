@@ -66,13 +66,19 @@ The Platform uses a unified AI system for NPCs (Servitors, Enemies) and the Auto
 
 ## Deployment
 
-**⚠️ Manual Deployment Required**: After committing and pushing changes, deployment to Vercel must be done manually using:
+Pushes to GitHub can deploy Quadar to Cloudflare Pages through the repository workflow at `.github/workflows/deploy-cloudflare-pages.yml`.
 
 ```bash
-vercel --prod --yes
+npm run build
 ```
 
-This ensures builds are tested locally before deployment and prevents automatic deployments from breaking production.
+The workflow performs a fresh `npm ci`, exports the static site into `out/`, and uploads it to Cloudflare Pages with `wrangler pages deploy`.
+
+Required repository settings:
+
+- GitHub secret `CLOUDFLARE_API_TOKEN`
+- GitHub variable `CLOUDFLARE_ACCOUNT_ID`
+- GitHub variable `CLOUDFLARE_PAGES_PROJECT_NAME`
 
 ## Testing & Automation (`autoplayListener.ts`)
 
