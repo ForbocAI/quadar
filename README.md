@@ -1,78 +1,46 @@
-<!-- AESTHETIC_PROTOCOL_COMPLIANCE -->
+# Quadar ForbocAI Integration
 
-<!-- ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ -->
+Quadar is a game-facing integration surface for the ForbocAI TypeScript SDK. It
+demonstrates how a browser game can supply runtime evidence to game-agnostic
+NPC intelligence while retaining authority over its own rules and world.
 
-```text
-    [VOID::WATCHER]
+- Play Quadar: <https://platform.forboc.ai>
+- ForbocAI SDK documentation: <https://docs.forboc.ai/npm/welcome>
+- Account and API keys: <https://account.forboc.ai>
 
-```
+## Integration Flow
 
-SYSTEM_OVERRIDE // NEURAL_LINK_ESTABLISHED // LOG_ERR_CRITICAL
+Quadar's ForbocAI boundary follows one direction:
 
+1. The game supplies an NPC identifier, structured persona, current
+   observation, allowed actions, and relevant world context.
+2. The TypeScript SDK transports the signed multi-round protocol and executes
+   client-owned vector-memory or Soul operations requested by the API.
+3. The ForbocAI API performs orchestration, inference, decision making,
+   rationale, diagnosis, and validation.
+4. The SDK returns normalized dialogue, action, and evidence data.
+5. Quadar decides how validated results affect its world and presentation.
 
+This keeps game mechanics in Quadar, intelligence policy in the API, and the
+SDK as the reusable input/output and persistence boundary.
 
----
-# 🌑 FORBOC AI: THE PLATFORM 🌑
+## ForbocAI Surfaces
 
-`Prócess_Id // Platfórm_Ínit`
+Quadar's ForbocAI surface is designed for NPC interaction, context-sensitive
+decisions, memory-aware responses, validated action proposals, and autonomous
+playtest diagnostics. These capabilities consume
+structured game evidence without placing Quadar names, maps, levels, rules, or
+canon inside Servitor.
 
-**ᚠ ᛫ ᛟ ᛫ ᚱ ᛫ ᛒ ᛫ ᛟ ᛫ ᚲ**
+The hosted ForbocAI API is selected by the SDK without URL configuration. An API
+key remains a runtime secret and must not be embedded in browser assets, source
+control, logs, or saved game data.
 
-```text
-    _________
-   /         \
-  /  0     0  \
- |      ^      |
-  \  \_____/  /
-   \_________/
-```
+## Related SDKs
 
-The **Forboc AI Platform** is the window into the Neural Grid. It is the flagship consumer of the ForbocAI SDK, providing the high-frequency interface for real-time generative narrative and decentralized agent interaction.
-
-> *Reality is a protocol. We are the architects.*
-
-### ⚡ System Specifications
-Built on **Next.js 16** and **Tailwind CSS**, designed for maximum visual impact and sub-millisecond responsiveness.
-
-- **Neural Grid Integration**: Native hook into the `forbocai` SDK via the [multi-round protocol](https://classified.forboc.ai/reference/api/scope-and-glossary.html) — API orchestrates directive, context, and verdict; SDK executes locally.
-- **Dynamic Simulation**: Real-time rendering of procedural environments and autonomous NPC behaviors.
-- **Vengeance UI**: A high-fidelity, grimdark aesthetic framework.
-
-### 🛠️ Boot Sequence
-To initialize the mainframe:
-
-```bash
-npm install
-npm run dev
-```
-
-To preview the static Cloudflare export locally:
-
-```bash
-npm run build
-npm run preview
-```
-
-## Cloudflare Deploy
-
-Pushes to GitHub can deploy this repo to Cloudflare Pages through [deploy-cloudflare-pages.yml](/Users/seandinwiddie/GitHub/Forboc.AI/quadar/.github/workflows/deploy-cloudflare-pages.yml).
-
-Set these repository settings before relying on the workflow:
-
-- GitHub secret `CLOUDFLARE_API_TOKEN`: API token with Cloudflare Pages edit access for the target account.
-- GitHub variable `CLOUDFLARE_ACCOUNT_ID`: Cloudflare account ID that owns the Pages project.
-- GitHub variable `CLOUDFLARE_PAGES_PROJECT_NAME`: existing Cloudflare Pages project name for Quadar.
-
-The workflow installs dependencies, runs `npm run build` to export the app into `out/`, and uploads that static directory to Cloudflare Pages with `wrangler pages deploy`.
-
-### 🌑 Aesthetic Mandates
-Strict adherence to the [Style Guide](./style-guide.md) is expected.
-- **Paranoid Reality**: Guided by `Philip K. Dick`.
-- **High-Tech Low-Life**: Guided by `William Gibson`.
-- **Eldritch Infrastructure**: Guided by `H.P. Lovecraft`.
-
----
-*SYS_LOAD_COMPLETE // VOID_STABLE*
+- TypeScript SDK: <https://github.com/ForbocAI/sdk>
+- Unreal Engine SDK: <https://github.com/ForbocAI/sdk-ue-5>
 
 ## License
-All rights reserved. © 2026 ForbocAI. See [LICENSE](./LICENSE) for full details.
+
+All rights reserved. See [LICENSE](./LICENSE).
