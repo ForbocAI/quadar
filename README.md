@@ -29,8 +29,8 @@ SDK as the reusable input/output and persistence boundary.
 Quadar's ForbocAI surface is designed for NPC interaction, context-sensitive
 decisions, memory-aware responses, validated action proposals, and autonomous
 playtest diagnostics. These capabilities consume
-structured game evidence without placing Quadar names, maps, levels, rules, or
-canon inside Servitor.
+structured game evidence. Quadar supplies its names, maps, levels, rules, and
+canon with each relevant interaction; the SDK does not own those game rules.
 
 The hosted ForbocAI API is selected by the SDK without URL configuration. An API
 key remains a runtime secret and must not be embedded in browser assets, source
